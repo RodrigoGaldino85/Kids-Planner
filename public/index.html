@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Meu Planner de Tarefas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <header class="app-header">
+    <div class="header-title">
+      <h1>Meu Planner de Tarefas <span>💖</span></h1>
+      <p class="subtitle">Pequenas atitudes, grandes conquistas!</p>
+    </div>
+    <a class="admin-link" href="/admin.html">⚙️ Área dos pais</a>
+  </header>
+
+  <main class="app-main">
+    <section class="week-banner">
+      <div class="week-range">
+        <span id="week-range-label">Semana atual</span>
+      </div>
+      <div class="week-stats">
+        <div class="stat-pill earned">
+          <span class="stat-label">Ganho da semana</span>
+          <span class="stat-value" id="stat-total">R$ 0,00</span>
+        </div>
+        <div class="stat-pill balance">
+          <span class="stat-label">A receber</span>
+          <span class="stat-value" id="stat-balance">R$ 0,00</span>
+        </div>
+        <div class="stat-pill stars">
+          <span class="stat-label">Estrelas</span>
+          <span class="stat-value" id="stat-stars">⭐ 0/7</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="alerts" class="alerts"></section>
+
+    <nav class="day-tabs" id="day-tabs"></nav>
+
+    <section class="card-section">
+      <h2>Tarefas de hoje</h2>
+      <div class="card-grid" id="daily-grid"></div>
+    </section>
+
+    <section class="card-section">
+      <h2>Tarefas da semana <span class="hint">(1 vez por semana)</span></h2>
+      <div class="card-grid" id="weekly-grid"></div>
+    </section>
+
+    <section class="card-section">
+      <h2>Tarefas bônus <span class="hint">(rendem valor extra!)</span></h2>
+      <div class="card-grid" id="extra-grid"></div>
+    </section>
+  </main>
+
+  <footer class="app-footer">
+    <a href="/admin.html">Ver histórico e pagamentos →</a>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+  <script src="/js/app.js"></script>
+</body>
+</html>

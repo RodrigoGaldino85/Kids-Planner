@@ -1,0 +1,20 @@
+{
+  "name": "planner-tarefas",
+  "version": "1.0.0",
+  "description": "Planner de tarefas interativo para acompanhar atividades e valores ganhos",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "nodemon server/index.js"
+  },
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "better-sqlite3": "^11.3.0",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  }
+}

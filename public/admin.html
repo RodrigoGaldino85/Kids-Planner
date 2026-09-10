@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Área dos pais — Planner de Tarefas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/css/admin.css" />
+</head>
+<body>
+  <div id="pin-gate" class="pin-gate">
+    <div class="pin-box">
+      <h1>Área dos pais 🔒</h1>
+      <p>Digite o PIN para gerenciar atividades e pagamentos.</p>
+      <input type="password" id="pin-input" inputmode="numeric" placeholder="PIN" />
+      <button class="btn btn-add" id="pin-submit">Entrar</button>
+      <p class="pin-error" id="pin-error"></p>
+      <a href="/index.html">← Voltar para o planner</a>
+    </div>
+  </div>
+
+  <div id="admin-app" class="admin-app" hidden>
+    <header class="app-header">
+      <div class="header-title">
+        <h1>Área dos pais ⚙️</h1>
+        <p class="subtitle">Atividades, pagamentos e desempenho</p>
+      </div>
+      <a class="admin-link" href="/index.html">← Voltar para o planner</a>
+    </header>
+
+    <main class="app-main">
+      <nav class="admin-tabs">
+        <button class="admin-tab selected" data-tab="activities">Atividades</button>
+        <button class="admin-tab" data-tab="weeks">Semanas &amp; Pagamentos</button>
+        <button class="admin-tab" data-tab="performance">Desempenho</button>
+      </nav>
+
+      <section id="tab-activities" class="admin-panel">
+        <form id="activity-form" class="activity-form">
+          <input type="text" id="act-name" placeholder="Nome da atividade" required />
+          <input type="text" id="act-emoji" placeholder="Emoji" maxlength="4" value="⭐" />
+          <select id="act-category">
+            <option value="daily">Diária</option>
+            <option value="weekly">Semanal</option>
+            <option value="extra">Extra/bônus</option>
+          </select>
+          <input type="number" id="act-value" placeholder="Valor (R$)" step="0.01" min="0" required />
+          <button type="submit" class="btn btn-add">Adicionar</button>
+        </form>
+        <div id="activities-list"></div>
+      </section>
+
+      <section id="tab-weeks" class="admin-panel" hidden>
+        <div id="weeks-list"></div>
+      </section>
+
+      <section id="tab-performance" class="admin-panel" hidden>
+        <canvas id="performance-chart" height="120"></canvas>
+      </section>
+    </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+  <script src="/js/admin.js"></script>
+</body>
+</html>
